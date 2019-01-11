@@ -1,11 +1,14 @@
 We use the `pytest` framework to test our small tests. 
 
-#### Installation
+You should install [redis](http://redis.io) first and start the service on `redis://localhost:6379`.
+
+#### Prerequisition
 
 1. Run the following command in your command line:
 
 ```
 pip install -U pytest
+pip install -U redis
 ```
 2. Check that you have installed the correct version
 
