@@ -1,24 +1,24 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    tracker.py                                         :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: ioriiod0 <ioriiod0@gmail.com>              +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/01/07 16:43:18 by ioriiod0          #+#    #+#              #
-#    Updated: 2019/01/11 20:02:19 by ioriiod0         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+# *************************************************************************** #
+#                                                                             #
+#                                                         :::      ::::::::   #
+#    tracker.py                                         :+:      :+:    :+:   #
+#                                                     +:+ +:+         +:+     #
+#    By: ioriiod0 <ioriiod0@gmail.com>              +#+  +:+       +#+        #
+#                                                 +#+#+#+#+#+   +#+           #
+#    Created: 2019/01/07 16:43:18 by ioriiod0          #+#    #+#             #
+#    Updated: 2019/01/11 20:02:19 by ioriiod0         ###   ########.fr       #
+#                                                                             #
+# *************************************************************************** #
 
 
-from typing import Any, Type, Optional
+from typing import Any, Type, Optional, Field
 import copy
 import redis
-from .fields import *
+from .fields import StringField, DictField, ListField, ValidateError
 
 try:
     import cPickle as pickle
-except:
+except Exception:
     import pickle
 
 

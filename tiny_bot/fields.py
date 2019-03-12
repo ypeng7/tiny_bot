@@ -1,14 +1,14 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    fields.py                                          :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: ioriiod0 <ioriiod0@gmail.com>              +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/01/07 18:28:23 by ioriiod0          #+#    #+#              #
-#    Updated: 2019/01/11 17:32:29 by ioriiod0         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+# *************************************************************************** #
+#                                                                             #
+#                                                         :::      ::::::::   #
+#    fields.py                                          :+:      :+:    :+:   #
+#                                                     +:+ +:+         +:+     #
+#    By: ioriiod0 <ioriiod0@gmail.com>              +#+  +:+       +#+        #
+#                                                 +#+#+#+#+#+   +#+           #
+#    Created: 2019/01/07 18:28:23 by ioriiod0          #+#    #+#             #
+#    Updated: 2019/01/11 17:32:29 by ioriiod0         ###   ########.fr       #
+#                                                                             #
+# *************************************************************************** #
 
 
 from typing import Type, Optional, Any, Callable
@@ -19,7 +19,12 @@ class ValidateError(Exception):
 
 
 class Field(object):
-    def __init__(self, _type: Type[type], default: Any = None, validator: Optional[Callable] = None, factory: Optional[Callable] = None):
+    def __init__(
+            self, _type: Type[type],
+            default: Any = None,
+            validator: Optional[Callable] = None,
+            factory: Optional[Callable] = None
+            ):
         self.name = None
         self.type = _type
         assert default is None or isinstance(default, _type)
@@ -28,7 +33,9 @@ class Field(object):
         self.factory = factory
 
     def __str__(self):
-        return '<%s:%s:%s>' % (self.__class__.__name__, self.name, self.default)
+        return '<%s:%s:%s>' % (
+                self.__class__.__name__, self.name, self.default
+                )
 
 
 class StringField(Field):

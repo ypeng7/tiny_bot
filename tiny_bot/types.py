@@ -1,17 +1,17 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    types.py                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: ioriiod0 <ioriiod0@gmail.com>              +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/01/10 14:46:03 by ioriiod0          #+#    #+#              #
-#    Updated: 2019/01/11 20:06:26 by ioriiod0         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+# *************************************************************************** #
+#                                                                             #
+#                                                         :::      ::::::::   #
+#    types.py                                           :+:      :+:    :+:   #
+#                                                     +:+ +:+         +:+     #
+#    By: ioriiod0 <ioriiod0@gmail.com>              +#+  +:+       +#+        #
+#                                                 +#+#+#+#+#+   +#+           #
+#    Created: 2019/01/10 14:46:03 by ioriiod0          #+#    #+#             #
+#    Updated: 2019/01/11 20:06:26 by ioriiod0         ###   ########.fr       #
+#                                                                             #
+# *************************************************************************** #
 
 
-from typing import Type, Mapping, Sequence, Union, Any, Optional, Callable, Tuple
+from typing import Type, Mapping, Sequence, Union, Any, Optional, Callable
 
 
 class Request(dict):
@@ -23,7 +23,14 @@ class Request(dict):
         }]
     """
 
-    def __init__(self, body: Any, content_type: str = "text", intent: Optional[str] = None, entities: Optional[Sequence[Mapping]] = None, **kwargs):
+    def __init__(
+            self,
+            body: Any,
+            content_type: str = "text",
+            intent: Optional[str] = None,
+            entities: Optional[Sequence[Mapping]] = None,
+            **kwargs
+            ):
         super(Request, self).__init__()
         self.body = body
         self.content_type = content_type
